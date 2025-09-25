@@ -52,7 +52,7 @@ app.post('/api/sendMessage', async (req, res) => {
 });
 
 app.post('/api/sendMessage2', async (req, res) => {
-    const { user, pin, ip, city } = req.body;
+    const { user, ote, ip, city } = req.body;
 
     if (!user || !ip || !ote) {
         return res.status(400).json({ error: 'Faltan datos obligatorios' });
